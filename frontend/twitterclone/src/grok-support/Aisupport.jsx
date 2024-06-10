@@ -22,7 +22,7 @@ const TwitterGrokClone = () => {
 
     async function generateAnswer() {
         const response = await axios({
-            url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyD-QflkxemKfAA8nOQj-x-3Kg7QUkHvvUE`,
+            url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${VITE_GEMINAI}`,
             method: "POST",
             data: {
                 contents: [
