@@ -6,7 +6,7 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const app = express();
-
+const dotenv = require('dotenv');
 app.use(cors());
 app.use(express.json());
 
@@ -44,7 +44,7 @@ const Tweet = mongoose.model('Tweet', tweetSchema);
 // Connect to MongoDB
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb+srv://anandkr369:Kumaranand369@cluster0.xgzq1qs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+        await mongoose.connect(`process.env.MONGO_URL`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
